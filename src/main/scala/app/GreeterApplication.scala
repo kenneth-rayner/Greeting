@@ -2,13 +2,16 @@ package app
 
 import scala.io.StdIn
 
-class Person(name: String){
+class Person(name: String, age : Int){
+
+  private val years : String = if(age>1)"years" else " year"
 
   def speak() : String = {
     if(name == "adam") {
       "You don't get a hello"
     }
-    else {      "Hello " + name
+    else {
+       s"Hello $name, your are $age $years old"
     }
   }
 }
@@ -22,7 +25,8 @@ object GreeterApplication extends App{
 
 
   val name = Prompt.ask("What is your name?")
-  val p = new Person(name)
+  val age : String = Prompt.ask("How old are you?")
+  val p = new Person(name, age.toInt)
   println(p.speak())
 
 
