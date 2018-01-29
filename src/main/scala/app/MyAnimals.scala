@@ -21,13 +21,13 @@ object MyAnimals extends scala.App {
   val jack: Wolf = new Wolf()
   val kev: PersianCat = new PersianCat()
 
-
+  println(jack.speak())
+  println (kev.speak())
   println(jess.speak())
   println(lassie.speak())
   println(fred.speak())
   println(bill.hunt())
-  println(jack.speak())
-  println (kev.speak())
+
 }
 
 class Wolf extends Dog{
