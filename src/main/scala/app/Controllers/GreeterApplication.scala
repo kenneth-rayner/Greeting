@@ -1,21 +1,6 @@
-package app
+package app.Controllers
 
-import app.Models.{BankAccount, CashISASavingsAccount, Person, SavingsAccount}
-
-import scala.io.StdIn
-
-
-
-
-
-
-
-
-object Prompt{
-
-  def ask(message : String) = StdIn.readLine(message)
-
-}
+import app.Models.{CashISASavingsAccount, Person, SavingsAccount}
 
 object GreeterApplication extends App{
 
