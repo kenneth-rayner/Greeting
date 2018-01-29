@@ -35,8 +35,24 @@ class SavingsAccount(accountNumber:String,balance: Double) extends BankAccount(a
       new CashISASavingsAccount(accountNumber, balance + amount)
     }
   }
-class Person(name: String, age : Int){
+class Person(name: String, age : Int,private val bankAccount: BankAccount){
 
+  def this(name: String, age: Int)= this(
+    name = name,
+    age = age,
+    bankAccount = new SavingsAccount("123",0.00))
+
+  def this (name: String) = this(
+    name=name,
+    age = 0,
+    bankAccount = new SavingsAccount("1234",0.00)
+  )
+def this(firstName:String,
+         lastName:String) = this(
+  name =s"$firstName $lastName",
+  age =0,
+  bankAccount = new SavingsAccount("12345",0.00)
+)
   private val years : String = if(age>1)"years" else " year"
 
   def speak() : String = {
@@ -44,7 +60,7 @@ class Person(name: String, age : Int){
       "You don't get a hello"
     }
     else {
-       s"Hello $name, your are $age $years old"
+       s"Hello $name, your are $age $years old. \n You have ${bankAccount.balance} in your account."
     }
   }
 }
@@ -74,7 +90,12 @@ object GreeterApplication extends App{
   val name = Prompt.ask("What is your name?")
   val age : String = Prompt.ask("How old are you?")
   val p = new Person(name, age.toInt)
+  val child = new Person("David")
+  val p2  = new Person ("Ken","Rayner")
+
   println(p.speak())
+  print(child.speak())
+  println(p2.speak())
 
 
 }
