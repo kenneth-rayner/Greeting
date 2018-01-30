@@ -43,7 +43,7 @@ object GreeterApplication extends App{
 
  // println(personWithCashIsa.speak())
 
-
+  myPerson.years
 
 
 }
