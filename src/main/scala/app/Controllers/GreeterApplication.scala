@@ -33,9 +33,9 @@ object GreeterApplication extends App{
 
   val name = Prompt.ask("What is your name?")
   val age : String = Prompt.ask("How old are you?")
-  val p = new Person(name, age.toInt,Nil)
- // val child = new Person("David")
-  //val p2  = new Person ("Ken","Rayner")
+  val p = new Person(name, age.toInt,List(withdrawFromIsa))
+  val child = new Person("David")
+  val p2  = new Person ("Ken","Rayner")
 
    println(p.speak())
  // println(child.speak())
@@ -43,7 +43,7 @@ object GreeterApplication extends App{
 
  // println(personWithCashIsa.speak())
 
-  myPerson.years
+
 
 
 }
