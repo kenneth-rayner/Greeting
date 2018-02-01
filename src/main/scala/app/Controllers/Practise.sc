@@ -29,6 +29,7 @@ if(point2 == point3){
 object IdFactory{
   private var counter =0
   def create():Int ={
+
     counter +=1
     counter
   }
@@ -76,3 +77,53 @@ val filtered = for(
 ) yield s"name:$name4, age:$age4"
 
 println(filtered)
+
+
+
+
+
+
+
+
+
+
+
+
+
+val numbers =List(1,2,3,4,5,6)
+def sumAndMultiplyBy(list:List[Int],
+             f:Int =>Int)=
+numbers.map(n =>f(n)).sum
+
+val timesTwo =(n : Int)=> n * 2
+val timesThree = (n : Int) => n*3
+val timesTwoThentimesThree = timesTwo andThen timesThree
+
+sumAndMultiplyBy(numbers, timesTwo)
+sumAndMultiplyBy(numbers, timesThree)
+sumAndMultiplyBy(numbers,timesTwoThentimesThree)
+
+//all the same:
+//list.map(timesTwo).map(timesThree)
+//list.map(timesTwo andThen timesThree)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

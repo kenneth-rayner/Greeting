@@ -45,12 +45,14 @@ class Scrabble (word : String) {
 
   }
   else if (tripleScore == "yes") {
+    val tripleScore = StdIn.readLine("Was your word a Triple Score? ")
 
-    println(totalScore * 3)
+
+    println("Your score is "+totalScore * 3)
 
   }
   else {
-    println(totalScore)
+    println("Your score is "+totalScore)
   }
 }
 
