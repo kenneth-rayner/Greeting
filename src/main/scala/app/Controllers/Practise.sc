@@ -106,7 +106,7 @@ sumAndMultiplyBy(numbers,timesTwoThentimesThree)
 //all the same:
 //list.map(timesTwo).map(timesThree)
 //list.map(timesTwo andThen timesThree)
-
+//
 
 
 
