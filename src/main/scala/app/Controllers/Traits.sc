@@ -8,14 +8,6 @@ final class Cat(override val name: String) extends Pet
 
 final class Dog(override val name: String) extends Pet
 
-val pets: List[Pet] =List(
-  new Dog("Lassie"),
-  new Cat ("anna")
-)
-
-
-
-
 
 trait Logging {
 
@@ -29,15 +21,39 @@ trait LoggingToFile extends Logging {
     true
   }
 }
+trait Walking{
+  def walk:String
+}
 
-  trait LogginToFileEncryptted  extends LoggingToFile {
-    override def log
+trait DogWalking extends Walking{
 
-    = ???
+  override def walk = "trot"
+}
+
+trait CatWalking extends Walking {
+  override def walk = "swag"
+
+}
+val pets: List[Pet with Walking] = List(
+  new Dog("Lassie") with DogWalking,
+  new Cat ("anna") with CatWalking
+)
+
+pets.foreach(p=> println(p.walk)
+}
+
+
+ /** trait LogginToFileEncryptted  extends LoggingToFile {
+    override def log    = ???
 
 
 }
-val rb = new SAccount()with LogginToFileEncryptted
+val rb = new SAccount()with LogginToFileEncryptted{
+
+}
+val rh = new SAccount()with LogginToFileEncryptted{
+
+}
 abstract class Bank
 class SAccount extends Bank
 val acc = new SAccount() with LoggingToFile
@@ -47,3 +63,5 @@ acc.log
 /**Without traints we would have to achieve thi by defining
   * pointless abstract classes to share behaviours.
   * We overcome this using traits to mix in behaviours */
+rb.log
+*/
